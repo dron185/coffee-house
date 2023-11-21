@@ -50,7 +50,7 @@ body {
   min-height: 100%;
   width: 1440px; /*max-width: 1440px;  ?*/
   margin: 0 auto;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .container {
