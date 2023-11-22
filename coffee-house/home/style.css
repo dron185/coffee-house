@@ -146,10 +146,6 @@ body {
   flex: 1 1 auto;
 }
 
-.enjoy {
-  
-}
-
 .enjoy__container {
   border-radius: 40px;
   background: url(../assets/img/enjoy-bg.jpg), lightgray 50% / cover no-repeat;
@@ -187,12 +183,34 @@ body {
   max-width: 200px;
   display: flex;
   justify-content: center;
-  align-items: center;
   min-height: 64px;
-  padding: 5px 78px;
+  padding: 20px 78px;
   border-radius: 100px;
   text-align: center;
   background-color: #e1d4c9;
   font-size: 16px;
   line-height: 150%;
+}
+
+.enjoy__link-text {
+  transform: translate(10px);
+  transition: transform 0.5s ease;
+}
+
+.enjoy__link-icon {
+  width: 20px;
+  height: 20px;
+  opacity: 0;
+  transform: translate(3px);
+  transition: opacity 0.5s ease;
+}
+
+.enjoy__button:hover .enjoy__link-text {
+  transform: translate(-5px);
+  transition: transform 0.5s ease;
+}
+
+.enjoy__button:hover .enjoy__link-icon {
+  opacity: 1;
+  transition: opacity 0.5s ease;
 }
