@@ -21,7 +21,7 @@ img {
   vertical-align: top;
 }
 
-h1,h2,h3,h4,h5,h6 {
+h1, h2, h3, h4, h5, h6 {
   font-size: inherit;
   font-weight: inherit;
 }
@@ -39,7 +39,6 @@ html, body {
 
 body {
   font-family: 'Inter', sans-serif;
-  line-height: 125%;
   font-weight: 600;
   color: #403f3d;
   background-color: #e1d4c9;
@@ -146,6 +145,10 @@ body {
   flex: 1 1 auto;
 }
 
+.enjoy {
+  padding-bottom: 50px;
+}
+
 .enjoy__container {
   border-radius: 40px;
   background: url(../assets/img/enjoy-bg.jpg), lightgray 50% / cover no-repeat;
@@ -214,3 +217,133 @@ body {
   opacity: 1;
   transition: opacity 0.5s ease;
 }
+
+/* ----------favourites---------- */
+
+.favourites {
+  padding: 50px 0;
+}
+
+.title-section {
+  margin-bottom: 40px;
+  font-size: 60px;
+  text-align: center;
+  line-height: 125%;
+}
+
+.title-section span {
+  font-style: italic;
+  color: #b0907a;
+}
+
+.favourites__slider-container {
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.slider-arrow {
+  margin: auto 0;
+}
+
+.slider-arrow__svg {
+  fill: #e1d4c9;
+  transition: fill 0.35s ease-in;
+  cursor: pointer;
+}
+
+.slider-arrow__svg path {
+  stroke: #403F3D;
+  transition: stroke 0.35s ease-in;
+}
+
+.slider-arrow:hover .slider-arrow__svg {
+  fill: #665F55;
+}
+
+.slider-arrow:hover .slider-arrow__svg path {
+  stroke: #e1d4c9;
+}
+
+
+.favourites__arrow-left {
+}
+
+.favourites__slider {
+}
+.favourites__carousel {
+}
+
+.favourites__input {
+  /* display: none; */
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  z-index: -1;
+}
+
+.favourites__slides {
+  display: flex;
+}
+
+.favourites__slide {
+  margin-bottom: 20px;
+}
+
+.favourites__slide-text {
+  max-width: 480px;
+  text-align: center;
+}
+
+.favourites__slide-text> *:not(:last-child) {
+  margin-bottom: 16px;
+}
+
+.favourites__slide-title {
+  font-size: 24px;
+  line-height: 125%
+}
+
+.favourites__slide-desc {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 150%;
+}
+
+.favourites__slide-price {
+  font-size: 24px;
+  line-height: 125%;
+}
+
+.favourites__navigation {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.favourites__label {
+  position: relative;
+  display: inline-block;
+  
+}
+
+.favourites__label::before {
+  position: absolute;
+  content: '';
+  width: 40px;
+  height: 4px;
+  border-radius: 100px;
+  background-color: #c1b6ad;
+  left: 100;
+}
+
+
+.favourites__input:checked + .favourites__label {
+  background-color: #665F55;
+}
+
+.favourites__arrow-right {
+}
+
+
