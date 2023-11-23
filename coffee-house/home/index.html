@@ -46,7 +46,7 @@
           </div>
         </div>
       </section>
-      <section class="favourites">
+      <section class="favourites" id="favorite">
         <div class="container">
           <h2 class="title-section">Choose your <span>favorite</span> coffee</h2>
           <div class="favourites__slider-container">
@@ -56,26 +56,24 @@
                 <path d="M36.5 30H24M24 30L30 24M24 30L30 36" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </div>
-            <div class="favourites__slider">
-              <div class="favourites__carousel">
+            <div class="favourites__carousel">
 
-                <input type="radio" name="rb" class="favourites__input" id="rb1" checked>
-                <input type="radio" name="rb" class="favourites__input" id="rb2">
-                <input type="radio" name="rb" class="favourites__input" id="rb3">
+              <input type="radio" name="rb" class="favourites__input" id="rb1" checked>
+              <input type="radio" name="rb" class="favourites__input" id="rb2">
+              <input type="radio" name="rb" class="favourites__input" id="rb3">
 
-                <div class="favourites__slides">
-                  <div class="favourites__slide"><img src="../assets/img/coffee-slider-1.png" alt="Frappuccino"></div>
-                  <div class="favourites__slide"><img src="" alt=""></div>
-                  <div class="favourites__slide"><img src="" alt=""></div>
-                </div>
-
-                <div class="favourites__slide-text">
-                  <h3 class="favourites__slide-title">S’mores Frappuccino</h3>
-                  <div class="favourites__slide-desc">This new drink takes an espresso and mixes it with brown sugar and cinnamon before being topped with oat milk.</div>
-                  <div class="favourites__slide-price">$5.50</div>
-                </div>
-          
+              <div class="favourites__slides">
+                <div class="favourites__slide"><img src="../assets/img/coffee-slider-1.png" alt="S’mores Frappuccino"></div>
+                <div class="favourites__slide"><img src="../assets/img/coffee-slider-2.png" alt="Caramel Macchiato"></div>
+                <div class="favourites__slide"><img src="../assets/img/coffee-slider-3.png" alt="Ice coffee"></div>
               </div>
+
+              <div class="favourites__slide-text">
+                <h3 class="favourites__slide-title">S’mores Frappuccino</h3>
+                <div class="favourites__slide-desc">This new drink takes an espresso and mixes it with brown sugar and cinnamon before being topped with oat milk.</div>
+                <div class="favourites__slide-price">$5.50</div>
+              </div>
+        
             </div>
             <div class="favourites__arrow-right slider-arrow">
               <svg width="60" height="60" class="slider-arrow__svg" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
@@ -85,7 +83,7 @@
             </div>
           </div>
           <div class="favourites__navigation">
-            <label for="rb1" class="favourites__label"></label>
+            <label for="rb1" class="favourites__label label-active"></label>
             <label for="rb2" class="favourites__label"></label>
             <label for="rb3" class="favourites__label"></label>
           </div>
