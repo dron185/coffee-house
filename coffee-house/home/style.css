@@ -461,37 +461,111 @@ body {
   padding: 50px 0 40px 0;
 }
 
-.contactus {
-  
-}
-
-.contactus__container {
+.footer__container {
+  display: flex;
+  gap: 100px;
   padding: 100px;
   border-radius: 40px;
   background-color: #665F55;
 }
 
-.contactus__social-block {
+.footer__social-block {
   max-width: 530px;
 }
 
-.contactus__title {
+.footer__title {
   color: #e1d4c9;
 }
 
-.contactus__social-links {
+.footer__social-links {
   display: flex;
+  gap: 12px;
 }
 
-.contactus__social-link {
+.footer__social-link {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100px;
+  border: 1px solid #c1b6ad;
+  transition: all 0.35s ease-in;
 }
-.contactus__contacts-block {
+
+.footer__social-link:hover {
+  background-color: #e1d4c9;
+  border-color: #e1d4c9;
 }
-.contactus__contacts-title {
+
+.footer__social-svg path {
+  stroke: #e1d4c9;
+  transition: stroke 0.35s ease-in;
 }
-.contactus__contacts {
+
+.footer__social-link:hover .footer__social-svg path {
+  stroke: #403f3d;
 }
-.contactus__contacts-link {
+
+.footer__contacts-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #e1d4c9;
 }
-.contactus__contacts-item {
+
+.footer__contacts-title {
+  margin-bottom: 40px;
+  font-size: 24px;
+  line-height: 125%;
 }
+
+.footer__contacts {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.footer__contacts-item {
+  padding: 0 0 4px 28px;
+  font-size: 16px;
+  line-height: 150%;
+}
+
+.footer__contacts-item:not(:last-child) {
+  margin-bottom: 16px;
+}
+
+.footer__contacts-link {
+  position: relative;
+}
+
+.footer__contacts-link::after {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 2px;
+  background-color: #e1d4c9;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.footer__contacts-link:hover::after {
+  transform: scaleX(1);
+}
+
+.footer__contacts-location {
+  background: url(../assets/svg/pin-alt.svg) no-repeat;
+}
+
+.footer__contacts-phone {
+  background: url(../assets/svg/phone.svg) no-repeat;
+}
+
+.footer__timetable {
+  background: url(../assets/svg/clock.svg) no-repeat;
+}
+
