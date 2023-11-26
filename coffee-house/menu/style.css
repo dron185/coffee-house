@@ -178,6 +178,16 @@ body {
   color: #e1d4c9;
 }
 
+.menu__button_inactive {
+  transition: all 0.35s ease-in;
+  cursor: pointer;
+}
+
+.menu__button_inactive:hover {
+  background-color: #665F55;
+  color: #e1d4c9;
+}
+
 .button__img {
   width: 30px;
   height: 30px;
@@ -189,6 +199,14 @@ body {
 }
 
 .button__img_active {
+  background-color: #e1d4c9;
+}
+
+.button__img_inactive {
+  transition: all 0.35s ease-in;
+}
+
+.menu__button_inactive:hover .button__img_inactive {
   background-color: #e1d4c9;
 }
 
