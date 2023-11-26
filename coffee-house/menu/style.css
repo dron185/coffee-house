@@ -48,13 +48,16 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100%;
-  width: 1440px; /*max-width: 1440px;  ?*/
+  width: 1440px;
   margin: 0 auto;
-  /* overflow: hidden; */
 }
 
 .container {
   padding: 0 40px;
+}
+
+.main {
+  flex: 1 1 auto;
 }
 
 .title-section {
@@ -105,13 +108,11 @@ body {
   left: 0;
   right: 0;
   transform: scaleX(0);
-  /* transform-origin: center; - по умолчанию*/
   transition: transform 0.3s ease;
 }
 
 .header__item:hover::after {
   transform: scaleX(1);
-  /* transform-origin: center; */
   transition: transform 0.3s ease;
 }
 
@@ -133,27 +134,120 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
-  transform: scaleX(0);
-  transition: transform 0.3s ease;
-}
-
-.menu-link:hover::after {
-  transform: scaleX(1);
-  transition: transform 0.3s ease;
 }
 
 .menu-link__text {
   margin-right: 8px;
 }
+
 .menu-link__icon {
   width: 20px;
   height: 20px;
 }
 
+/* ----------menu---------- */
 
+.menu {
+  padding-bottom: 50px;
+}
 
+.menu__title {
+  max-width: 800px;
+  text-align: center;
+  margin: 0 auto 40px auto;
+}
 
+.menu__buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 40px;
+}
 
+.menu__button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px 8px 8px;
+  border-radius: 100px;
+  border: 1px solid #c1b6ad;
+}
+
+.menu__button_active {
+  background-color: #665F55;
+  color: #e1d4c9;
+}
+
+.button__img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #c1b6ad
+}
+
+.button__img_active {
+  background-color: #e1d4c9;
+}
+
+.button__name {
+  font-size: 16px;
+  line-height: 150%;
+}
+
+.menu__cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+}
+
+.menu__card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  grid-column: span 1;
+  border: 1px solid #c1b6ad;
+  border-radius: 40px;
+}
+
+.menu__card-picture {
+  overflow: hidden;
+  border-radius: 40px;
+}
+
+.menu__card-img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  transform: scale(1.1);
+  transition: transform 0.5s ease;
+}
+
+.menu__card:hover .menu__card-img {
+  transform: scale(1);
+}
+
+.menu__card-content {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  font-size: 24px;
+  line-height: 125%;
+  flex: 1 1 auto;
+}
+
+.menu__card-content> *:not(:last-child) {
+  margin-bottom: 12px;
+}
+
+.menu__card-text {
+  flex: 1 1 auto;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 150%;
+}
 
 /* ----------footer contact us---------- */
 
