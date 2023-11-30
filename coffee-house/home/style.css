@@ -292,13 +292,13 @@ body {
 .enjoy__container {
   border-radius: 40px;
   background: url(../assets/img/enjoy-bg.jpg) no-repeat center / cover;
-  padding: 100px 0;
+  padding: 100px 100px;
   max-width: 100%;
   height: auto;
 }
 
 .enjoy__content {
-  margin-left: 100px;
+  /* margin-left: 100px; */
   max-width: 530px;
 }
 
@@ -361,8 +361,8 @@ body {
 
 /* enjoy media */
 @media (max-width: 830px) {
-  .enjoy__content {
-    margin-left: 60px;
+  .enjoy__container {
+    padding: 100px 60px;
   }
 }
 
