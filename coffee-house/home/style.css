@@ -57,6 +57,17 @@ body {
   padding: 0 40px;
 }
 
+@media (max-width: 650px) {
+  .container {
+    padding: 0 30px;
+  }
+}
+@media (max-width: 550px) {
+  .container {
+    padding: 0 16px;
+  }
+}
+
 /* ----------header---------- */
 
 .header {
@@ -70,6 +81,12 @@ body {
   justify-content: space-between;
   font-size: 16px;
   line-height: 150%;
+}
+
+/*add nav container*/
+.header__nav-container {
+  display: flex;
+  gap: 366px;
 }
 
 .header__list {
@@ -178,21 +195,87 @@ body {
   transform: translateY(4px);
 }
 
-/* media */
+/* header media */
+@media (max-width: 1380px) {
+  .header__nav-container {
+    gap: 320px;
+  }
+}
+@media (max-width: 1330px) {
+  .header__nav-container {
+    gap: 280px;
+  }
+}
+@media (max-width: 1210px) {
+  .header__nav-container {
+    gap: 230px;
+  }
+}
+@media (max-width: 1130px) {
+  .header__nav-container {
+    gap: 180px;
+  }
+}
+@media (max-width: 998px) {
+  .header__nav-container {
+    gap: 100px;
+  }
+}
+
 @media (max-width: 890px) {
   .header__list {
     gap: 30px;
   }
+
+  .header__nav-container {
+    gap: 40px;
+  }
 }
 
 @media (max-width: 768px) {
-  /* .header__container {
-    display: block;
-  } */
+  body {
+    overflow-y: hidden;
+  }
+ 
+  .header__nav-container {
+    padding: 60px 40px;
+    font-size: 32px;
+    line-height: 125%;
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 100px;
+    /* display: block; */
+    display: none;
+    width: 100vh;
+    height: 100vh;
+    background-color: #e1d4c9;
+  }
+
+  .header__nav {
+    margin-bottom: 100px;
+  }
+
+  .header__link-menu {
+    justify-content: center;
+  }
+
+  .menu-link__icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .menu-link__text {
+    margin-right: 16px;
+  }
 
   .header__list {
     flex-direction: column;
     row-gap: 60px;
+  }
+
+  .burger {
+    display: block;
   }
 }
 
@@ -274,6 +357,13 @@ body {
 
 .enjoy__button:hover .enjoy__link-icon {
   opacity: 1;
+}
+
+/* enjoy media */
+@media (max-width: 830px) {
+  .enjoy__content {
+    margin-left: 60px;
+  }
 }
 
 /* ----------favourites---------- */
