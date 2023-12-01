@@ -83,7 +83,6 @@ body {
   line-height: 150%;
 }
 
-/*add nav container*/
 .header__nav-container {
   display: flex;
   gap: 366px;
@@ -435,6 +434,10 @@ body {
   transition: stroke 0.35s ease-in;
 }
 
+.favourites__carousel {
+  max-width: 480px;
+}
+
 .favourites__input {
   position: absolute;
   width: 0;
@@ -447,7 +450,6 @@ body {
   display: flex;
   position: relative;
   left: 0;
-  width: 480px;
   overflow: hidden;
 }
 
@@ -455,8 +457,11 @@ body {
   margin-bottom: 20px;
 }
 
+.favourites__slide img {
+  width: 480px;
+}
+
 .favourites__slide-text {
-  max-width: 480px;
   text-align: center;
 }
 
@@ -497,6 +502,35 @@ body {
   }
   .slider-arrow:hover .slider-arrow__svg path {
     stroke: #e1d4c9;
+  }
+}
+
+@media (max-width: 690px) {
+  .favourites__slider-container {
+    justify-content: center;
+  }
+  .slider-arrow {
+    display: none;
+  }
+  .title-section {
+    font-size: 42px;
+  }
+}
+@media (max-width: 470px) {
+  .title-section {
+    font-size: 32px;
+  }
+  .favourites__slides {
+    width: 348px;
+  }
+  .favourites__slide-text {
+    max-width: 348px;
+  }
+  .favourites__carousel {
+    max-width: 348px;
+  }
+  .favourites__slide img {
+    width: 348px;
   }
 }
 
@@ -546,18 +580,21 @@ body {
   }
 }
 
-@media (hover: none) {
-  .about__img {
-    transform: scale(1.05);
-  }
-}
-
 @media (max-width: 768px) {
   .about__cards {
     flex-direction: column;
   }
   .about__card_sm {
     display: none;
+  }
+  .about__img {
+    transform: scale(1.05);
+  }
+}
+
+@media (max-width: 380px) {
+  .about__img {
+    transform: scale(1.23);
   }
 }
 
@@ -592,7 +629,7 @@ body {
   display: flex;
   align-items: center;
   gap: 8px;
-  padding: 12px 0 12px 20px;
+  padding: 11px 0 11px 20px;
   border: 1px solid #665F55;
   border-radius: 100px;
   transition: background-color 0.4s ease-in;
@@ -619,6 +656,10 @@ body {
   transition: color 0.4s ease-in;
 }
 
+.mobile-app__picture img {
+  max-width: 100%;
+}
+
 @media (hover: hover) {
   .mobile-app__link:hover {
     background-color: #665F55;
@@ -640,6 +681,15 @@ body {
   }
   .mobile-app__picture {
     margin: 0 auto;
+  }
+}
+
+@media (max-width: 470px) {
+  .mobile-app__container {
+    gap: 40px;
+  }
+  .mobile-app__buttons {
+    flex-wrap: wrap;
   }
 }
 
@@ -762,8 +812,23 @@ body {
     flex-wrap: wrap;
   }
 }
+
 @media (max-width: 870px) {
   .footer__container {
     padding: 100px 60px;
+  }
+}
+
+@media (max-width: 720px) {
+  .footer__container {
+    padding: 80px 30px;
+    gap: 70px;
+  }
+}
+
+@media (max-width: 520px) {
+  .footer__container {
+    padding: 60px 16px;
+    gap: 40px;
   }
 }
