@@ -480,6 +480,9 @@ body {
 }
 
 @media (max-width: 450px) {
+  .menu__cards {
+    margin: 0;
+  }
   .menu__buttons {
     gap: 8px;
   }
