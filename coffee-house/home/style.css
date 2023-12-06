@@ -459,6 +459,7 @@ body {
 
 .favourites__carousel {
   max-width: 480px;
+  overflow: hidden;
 }
 
 .favourites__input {
@@ -471,13 +472,8 @@ body {
 
 .favourites__slides {
   display: flex;
-  position: relative;
-  left: 0;
-  overflow: hidden;
-}
-
-.favourites__slide {
   margin-bottom: 20px;
+  transition: all 1s;
 }
 
 .favourites__slide img {
@@ -485,6 +481,7 @@ body {
 }
 
 .favourites__slide-text {
+  margin: 0 auto;
   text-align: center;
 }
 
@@ -539,21 +536,13 @@ body {
     font-size: 42px;
   }
 }
+
 @media (max-width: 470px) {
   .title-section {
     font-size: 32px;
   }
-  .favourites__slides {
-    width: 348px;
-  }
   .favourites__slide-text {
     max-width: 348px;
-  }
-  .favourites__carousel {
-    max-width: 348px;
-  }
-  .favourites__slide img {
-    width: 348px;
   }
 }
 
