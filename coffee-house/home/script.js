@@ -25,6 +25,7 @@ const slides = document.querySelector('.favourites__slides');
 const images = slides.querySelectorAll('img');
 const btnLeft = document.querySelector('.favourites__arrow-left');
 const btnRight = document.querySelector('.favourites__arrow-right');
+const indicators = document.querySelectorAll('.favourites__indicator');
 let carouselWidth;
 let carouselCount = 0;
 
@@ -47,6 +48,7 @@ function nextSlide() {
     carouselCount = 0;
   }
   slideMovementDistamce();
+  activeIndicator(carouselCount);
 }
 
 function prevSlide() {
@@ -55,6 +57,7 @@ function prevSlide() {
     carouselCount = images.length - 1;
   }
   slideMovementDistamce();
+  activeIndicator(carouselCount);
 }
 
 btnRight.addEventListener('click', nextSlide);
@@ -64,3 +67,27 @@ btnLeft.addEventListener('click', prevSlide);
 function slideMovementDistamce() {
   slides.style.transform = `translateX(${-carouselCount * carouselWidth}px)`;
 }
+
+// выбирает индикатор соответствующий слайду:
+function activeIndicator(index) {
+  for (let indicator of indicators) {
+    indicator.classList.remove('progress-active');
+    indicators[index].classList.add('progress-active');
+  }
+}
+
+// Элементы карусели автоматически прокручиваются влево:
+let timer = setInterval(() => {
+  nextSlide()
+}, 5000);
+
+//
+slides.addEventListener('mouseover', () => {
+  clearInterval(timer)
+})
+
+slides.addEventListener('mouseleave', () => {
+  timer = setInterval(() => {
+    nextSlide()
+  }, 5000);
+})

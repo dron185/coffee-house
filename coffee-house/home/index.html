@@ -62,22 +62,33 @@
             </div>
             <div class="favourites__carousel">
 
-              <input type="radio" name="rb" class="favourites__input" id="rb1" checked>
-              <input type="radio" name="rb" class="favourites__input" id="rb2">
-              <input type="radio" name="rb" class="favourites__input" id="rb3">
-
               <div class="favourites__slides">
-                <div class="favourites__slide"><img src="../assets/img/coffee-slider-1.png" alt="S’mores Frappuccino"></div>
-                <div class="favourites__slide"><img src="../assets/img/coffee-slider-2.png" alt="Caramel Macchiato"></div>
-                <div class="favourites__slide"><img src="../assets/img/coffee-slider-3.png" alt="Ice coffee"></div>
+                <div class="favourites__slide">
+                  <img src="../assets/img/coffee-slider-1.png" alt="S’mores Frappuccino">
+                  <div class="favourites__slide-text">
+                    <h3 class="favourites__slide-title">S’mores Frappuccino</h3>
+                    <div class="text-section">This new drink takes an espresso and mixes it with brown sugar and cinnamon before being topped with oat milk.</div>
+                    <div class="favourites__slide-price">$5.50</div>
+                  </div>
+                </div>
+                <div class="favourites__slide">
+                  <img src="../assets/img/coffee-slider-2.png" alt="Caramel Macchiato">
+                  <div class="favourites__slide-text">
+                    <h3 class="favourites__slide-title">Caramel Macchiato</h3>
+                    <div class="text-section">Fragrant and unique classic espresso with rich caramel-peanut syrup, with cream under whipped thick foam.</div>
+                    <div class="favourites__slide-price">$5.00</div>
+                  </div>
+                </div>
+                <div class="favourites__slide">
+                  <img src="../assets/img/coffee-slider-3.png" alt="Ice coffee">
+                  <div class="favourites__slide-text">
+                    <h3 class="favourites__slide-title">Ice coffee</h3>
+                    <div class="text-section">A popular summer drink that tones and invigorates. Prepared from coffee, milk and ice.</div>
+                    <div class="favourites__slide-price">$4.50</div>
+                  </div>
+                </div>
               </div>
 
-              <div class="favourites__slide-text">
-                <h3 class="favourites__slide-title">S’mores Frappuccino</h3>
-                <div class="text-section">This new drink takes an espresso and mixes it with brown sugar and cinnamon before being topped with oat milk.</div>
-                <div class="favourites__slide-price">$5.50</div>
-              </div>
-        
             </div>
             <div class="favourites__arrow-right slider-arrow">
               <svg width="24" height="24" class="slider-arrow__svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -85,10 +96,16 @@
               </svg>
             </div>
           </div>
-          <div class="favourites__navigation">
-            <label for="rb1" class="favourites__label label-active"></label>
-            <label for="rb2" class="favourites__label"></label>
-            <label for="rb3" class="favourites__label"></label>
+          <div class="favourites__indicators">
+            <span class="favourites__indicator">
+              <span class="favourites__progress progress-active"></span>
+            </span>
+            <span class="favourites__indicator">
+              <span class="favourites__progress"></span>
+            </span>
+            <span class="favourites__indicator">
+              <span class="favourites__progress"></span>
+            </span>
           </div>
         </div>
       </section>
