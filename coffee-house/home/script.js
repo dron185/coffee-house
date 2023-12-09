@@ -97,7 +97,36 @@ slides.addEventListener('mouseleave', () => {
   progressActive.style.animationPlayState = `running`;
 })
 
+// swiping left or right
+carousel.addEventListener('touchstart', touchStart);
+carousel.addEventListener('touchmove', touchMove);
+let coordinateX;
+let coordinateY;
 
+function touchStart(event) {
+  coordinateX = event.touches[0].clientX;
+  coordinateY = event.touches[0].clientY;
+}
+
+function touchMove(event) {
+  if (!coordinateX || !coordinateY) {
+    return false;
+  }
+  let newCoordinateX = event.touches[0].clientX;
+  let newCoordinateY = event.touches[0].clientY;
+  let differCoordinateX = newCoordinateX - coordinateX;
+  let differCoordinateY = newCoordinateY - coordinateY;
+
+  if (Math.abs(differCoordinateX) > Math.abs(differCoordinateY)) {
+    if (differCoordinateX > 0) {
+      prevSlide()
+    } else {
+      nextSlide()
+    }
+  } 
+  coordinateX = null;
+  coordinateY = null;
+}
 
 
 
