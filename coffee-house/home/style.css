@@ -508,15 +508,30 @@ body {
 
 .favourites__progress {
   position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  border-radius: 100px;
+  /* background-color: #665F55; */
+  /* transition: width 5s ease; */
 }
 
 .progress-active {
   background-color: #665F55;
+  animation-name: fill-indicator;
+  animation-duration: 5s;
+  animation-timing-function: linear;
 }
 
-/* .indicator-active {
-  background-color: #665F55;
-} */
+@keyframes fill-indicator {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
 
 @media (hover: hover) {
   .slider-arrow:hover {

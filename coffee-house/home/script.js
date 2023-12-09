@@ -26,6 +26,9 @@ const images = slides.querySelectorAll('img');
 const btnLeft = document.querySelector('.favourites__arrow-left');
 const btnRight = document.querySelector('.favourites__arrow-right');
 const indicators = document.querySelectorAll('.favourites__indicator');
+
+const progress = document.querySelectorAll('.favourites__progress');
+
 let carouselWidth;
 let carouselCount = 0;
 
@@ -70,24 +73,35 @@ function slideMovementDistamce() {
 
 // выбирает индикатор соответствующий слайду:
 function activeIndicator(index) {
-  for (let indicator of indicators) {
+  for (let indicator of progress) {
     indicator.classList.remove('progress-active');
-    indicators[index].classList.add('progress-active');
+    progress[index].classList.add('progress-active');
   }
 }
 
-// Элементы карусели автоматически прокручиваются влево:
 let timer = setInterval(() => {
   nextSlide()
 }, 5000);
 
-//
 slides.addEventListener('mouseover', () => {
-  clearInterval(timer)
+  clearInterval(timer);
+  const progressActive = document.querySelector('.progress-active');
+  progressActive.style.animationPlayState = `paused`;
 })
 
 slides.addEventListener('mouseleave', () => {
   timer = setInterval(() => {
     nextSlide()
   }, 5000);
+  const progressActive = document.querySelector('.progress-active');
+  progressActive.style.animationPlayState = `running`;
 })
+
+
+
+
+
+
+
+
+
