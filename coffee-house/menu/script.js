@@ -20,6 +20,7 @@ for (let i = 0; i < buttons.length; i++) {
     buttonImg[i].classList.add('button__img_active');
 
     for (let cards of menuCards) {
+      cards.classList.add('fadein');
       cards.classList.remove('menu__cards_active');
     }
     menuCards[i].classList.add('menu__cards_active');
