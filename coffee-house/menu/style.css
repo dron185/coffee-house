@@ -319,17 +319,20 @@ body {
   padding: 8px 16px 8px 8px;
   border-radius: 100px;
   border: 1px solid #c1b6ad;
+  transition: all 0.35s ease-in;
+  cursor: pointer;
 }
 
 .menu__button_active {
   background-color: #665F55;
   color: #e1d4c9;
+  cursor: auto;
 }
 
-.menu__button_inactive {
+/* .menu__button_inactive {
   transition: all 0.35s ease-in;
   cursor: pointer;
-}
+} */
 
 .button__img {
   width: 30px;
@@ -345,10 +348,6 @@ body {
   background-color: #e1d4c9;
 }
 
-.button__img_inactive {
-  transition: all 0.35s ease-in;
-}
-
 .button__name {
   font-size: 16px;
   line-height: 150%;
@@ -356,9 +355,14 @@ body {
 
 .menu__cards {
   margin: 0 -20px -40px;
-  display: flex;
+  /* display: flex; */
   flex-wrap: wrap;
   justify-content: center;
+  display: none;
+}
+
+.menu__cards_active {
+  display: flex;
 }
 
 .menu__card-wrapper {
@@ -433,12 +437,12 @@ body {
 }
 
 @media (hover: hover) {
-  .menu__button_inactive:hover {
+  .menu__button:hover {
     background-color: #665F55;
     color: #e1d4c9;
   }
 
-  .menu__button_inactive:hover .button__img_inactive {
+  .menu__button:hover .button__img {
     background-color: #e1d4c9;
   }
 
