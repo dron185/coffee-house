@@ -444,7 +444,7 @@ body {
 
 .menu__button-refresh {
   display: none;
-  margin: 0 auto;
+  margin: 40px auto 0;
   justify-content: center;
   align-items: center;
   width: 60px;
@@ -487,15 +487,18 @@ body {
 
 @media (max-width: 768px) {
   .menu__cards {
-    margin: 0 -6px;
+    margin: 0 -6px -40px;
   }
 
-  .menu__card-wrapper:nth-child(n + 5) {
+  .card-wrapper__hidden {
     display: none;
   }
 
   .menu__button-refresh {
     display: flex;
+  }
+  .button-refresh__invisible {
+    display: none;
   }
 }
 
@@ -507,7 +510,7 @@ body {
 
 @media (max-width: 450px) {
   .menu__cards {
-    margin: 0;
+    margin: 0 0 -40px;
   }
   .menu__buttons {
     gap: 8px;
