@@ -1,3 +1,33 @@
+// burger:
+const header = document.querySelector('.header');
+const headerNav = document.querySelector('.header__nav-container');
+const navItems = headerNav.querySelectorAll('a');
+const burger = document.getElementById('burger');
+const body = document.body;
+const headerMenuButton = document.querySelector('.header__link-menu');
+const headerLogoLink = document.querySelector('.header__logo');
+
+burger.addEventListener('click', () => {
+  header.classList.toggle('active');
+  body.classList.toggle('stop-scroll');
+});
+
+navItems.forEach(element => {
+  element.addEventListener('click', () => {
+    header.classList.remove('active');
+    body.classList.remove('stop-scroll');
+  });
+});
+
+headerMenuButton.addEventListener('click', () => {
+  header.classList.remove('active');
+  body.classList.remove('stop-scroll');
+})
+
+headerLogoLink.addEventListener('click', () => {
+  header.classList.remove('active');
+})
+
 // Categories of products on the menu page:
 const teaPicture = document.querySelectorAll('.menu__card-img');
 const teaTitle = document.querySelectorAll('.menu__card-title');

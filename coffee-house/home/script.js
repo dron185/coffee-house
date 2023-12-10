@@ -5,10 +5,11 @@ const headerNav = document.querySelector('.header__nav-container');
 const navItems = headerNav.querySelectorAll('a');
 const burger = document.getElementById('burger');
 const body = document.body;
+const headerLogoLink = document.querySelector('.header__logo');
 
 burger.addEventListener('click', () => {
   header.classList.toggle('active');
-  body.classList.add('stop-scroll');
+  body.classList.toggle('stop-scroll');
 });
 
 navItems.forEach(element => {
@@ -17,6 +18,10 @@ navItems.forEach(element => {
     body.classList.remove('stop-scroll');
   });
 });
+
+headerLogoLink.addEventListener('click', () => {
+  header.classList.remove('active');
+})
 
 // Implementation of the carousel:
 
