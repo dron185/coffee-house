@@ -21,6 +21,7 @@ navItems.forEach(element => {
 
 headerLogoLink.addEventListener('click', () => {
   header.classList.remove('active');
+  body.classList.remove('stop-scroll');
 })
 
 // Implementation of the carousel:

@@ -77,3 +77,57 @@ buttonRefresh.addEventListener('click', () => {
   }
   buttonRefresh.classList.add('button-refresh__invisible');
 })
+
+// The Modal on the menu page:
+const menuCard = document.querySelectorAll('.menu__card');
+const modal = document.getElementById('modal');
+const closeBtn = document.getElementById('close-modal-btn');
+const menuModalDrinks = document.querySelector('#modal .modal-drinks');
+
+menuCard.forEach(el => {
+  el.addEventListener('click', () => {
+    modal.classList.add('visible');
+  })
+})
+
+closeBtn.addEventListener('click', () => {
+  modal.classList.remove('visible');
+})
+
+menuModalDrinks.addEventListener('click', event => {
+  event._isClickInside = true;
+})
+
+modal.addEventListener('click', event => {
+  if (event._isClickInside) {
+    return;
+  }
+  event.currentTarget.classList.remove('visible');
+})
+
+//----------------------------------------
+
+const dataUrl = '../assets/products.json';
+const modalDrinksTitle = document.querySelector('.modal-drinks__title');
+const modalDrinksText = document.querySelector('.modal-drinks__text');
+
+
+function getData(url) {
+  fetch(url)
+    .then((res) => res.json())
+    .then((data) => {
+      console.log(data[0].name);
+      for (let index = 0; index < menuCard.length; index++) {
+        menuCard[index].addEventListener('click', () => {
+          modalDrinksTitle.innerHTML = data[index].name;
+          modalDrinksText.innerHTML = data[index].description;
+        })
+      }
+    });
+}
+getData(dataUrl);
+
+console.log(menuCard.length);
+
+
+
