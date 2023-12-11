@@ -87,11 +87,13 @@ const menuModalDrinks = document.querySelector('#modal .modal-drinks');
 menuCard.forEach(el => {
   el.addEventListener('click', () => {
     modal.classList.add('visible');
+    body.classList.add('stop-scroll');
   })
 })
 
 closeBtn.addEventListener('click', () => {
   modal.classList.remove('visible');
+  body.classList.remove('stop-scroll');
 })
 
 menuModalDrinks.addEventListener('click', event => {
@@ -103,14 +105,25 @@ modal.addEventListener('click', event => {
     return;
   }
   event.currentTarget.classList.remove('visible');
+  body.classList.remove('stop-scroll');
 })
 
 //----------------------------------------
 
 const dataUrl = '../assets/products.json';
+const modalImg = ['../assets/img/coffee-1.jpg', '../assets/img/coffee-2.jpg', '../assets/img/coffee-3.jpg', '../assets/img/coffee-4.jpg', '../assets/img/coffee-5.jpg', '../assets/img/coffee-6.jpg', '../assets/img/coffee-7.jpg', '../assets/img/coffee-8.jpg', '../assets/img/tea-1.jpg', '../assets/img/tea-2.jpg', '../assets/img/tea-3.jpg', '../assets/img/tea-4.jpg', '../assets/img/dessert-1.jpg', '../assets/img/dessert-2.jpg', '../assets/img/dessert-3.jpg', '../assets/img/dessert-4.jpg', '../assets/img/dessert-5.jpg', '../assets/img/dessert-6.jpg', '../assets/img/dessert-7.jpg', '../assets/img/dessert-8.jpg', ];
 const modalDrinksTitle = document.querySelector('.modal-drinks__title');
 const modalDrinksText = document.querySelector('.modal-drinks__text');
-
+const sizeS = document.querySelector('.size-s');
+const sizeM = document.querySelector('.size-m');
+const sizeL = document.querySelector('.size-l');
+const additives = document.querySelectorAll('.additives');
+const modalPicture = document.querySelector('.modal-drinks__pic');
+const price = document.querySelector('.modal-drinks__price');
+const buttonSize = document.querySelectorAll('.tabs__button-size');
+const buttonTabs = document.querySelectorAll('.tabs__button');
+const tabsButtonAdditive = document.querySelectorAll('.tabs__button-additive');
+const prices = [0.00, 0.50, 1.00];
 
 function getData(url) {
   fetch(url)
@@ -121,13 +134,45 @@ function getData(url) {
         menuCard[index].addEventListener('click', () => {
           modalDrinksTitle.innerHTML = data[index].name;
           modalDrinksText.innerHTML = data[index].description;
+          sizeS.innerHTML = data[index].sizes.s.size;
+          sizeM.innerHTML = data[index].sizes.m.size;
+          sizeL.innerHTML = data[index].sizes.l.size;
+          for (let i = 0; i < additives.length; i++) {
+            additives[i].innerHTML = data[index].additives[i].name;
+          }
+          modalPicture.src = modalImg[index];
+          modalPicture.alt = data[index].name;
+          price.innerHTML = data[index].price;
+          
+          for (let j = 0; j < buttonTabs.length; j++) {
+            buttonTabs[j].addEventListener('click', () => {
+              if (j < 3) {
+                buttonTabs[j].classList.toggle('tabs__button_active');
+                if (buttonTabs[j].classList.contains('tabs__button_active')) {
+                  price.innerHTML = (Number(price.innerHTML) + prices[j]).toFixed(2);
+                } else {
+                  price.innerHTML = (Number(price.innerHTML) - prices[j]).toFixed(2);
+                }
+              }
+
+              if (j > 2) {
+                buttonTabs[j].classList.toggle('tabs__button_active');
+                if (buttonTabs[j].classList.contains('tabs__button_active')) {
+                  price.innerHTML = (Number(price.innerHTML) + 0.50).toFixed(2);
+                } else {
+                  price.innerHTML = (Number(price.innerHTML) - 0.50).toFixed(2);
+                }
+              }
+            })
+          }
         })
       }
     });
 }
 getData(dataUrl);
 
-console.log(menuCard.length);
+
+
 
 
 
