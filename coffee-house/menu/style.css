@@ -523,12 +523,8 @@ body {
   transform: scale(1);
 }
 
-.modal-drinks {
- 
-}
-
 .modal-drinks__img {
-  max-width: 310px;
+  min-width: 310px;
   max-height: 310px;
   overflow: hidden;
   border-radius: 40px;
@@ -550,9 +546,6 @@ body {
   margin-bottom: 20px;
 }
 
-.modal-drinks__title-text {
-
-}
 
 .modal-drinks__title {
   margin-bottom: 12px;
@@ -575,6 +568,7 @@ body {
 
 .tabs__buttons {
   display: flex;
+  flex-wrap: wrap;
   gap: 8px;
 }
 
@@ -610,7 +604,7 @@ body {
   transition: all 0.5s ease;
 }
 
-.tabs__button-letter_active {
+.tabs__button_active .tabs__button-letter {
   background-color: #e1d4c9;
   color: #403f3d;
 }
@@ -625,7 +619,10 @@ body {
 .modal-drinks__info {
   display: flex;
   gap: 8px;
+  padding-top: 12px;
+  border-top: 1px solid #c1b6ad;
 }
+
 
 .modal-drinks__info-text {
   font-size: 10px;
@@ -635,9 +632,6 @@ body {
 .modal-drinks__button {
   min-height: 44px;
   width: 100%;
-  /* display: flex;
-  align-items: center;
-  justify-content: center; */
   text-align: center;
   font-size: 16px;
   line-height: 150%;
@@ -701,6 +695,11 @@ body {
     display: flex;
   }
   .button-refresh__invisible {
+    display: none;
+  }
+}
+@media (max-width: 665px) {
+  .modal-drinks__img {
     display: none;
   }
 }
