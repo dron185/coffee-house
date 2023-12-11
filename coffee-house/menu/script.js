@@ -87,11 +87,13 @@ const menuModalDrinks = document.querySelector('#modal .modal-drinks');
 menuCard.forEach(el => {
   el.addEventListener('click', () => {
     modal.classList.add('visible');
+    body.classList.add('stop-scroll');
   })
 })
 
 closeBtn.addEventListener('click', () => {
   modal.classList.remove('visible');
+  body.classList.remove('stop-scroll');
 })
 
 menuModalDrinks.addEventListener('click', event => {
@@ -103,6 +105,7 @@ modal.addEventListener('click', event => {
     return;
   }
   event.currentTarget.classList.remove('visible');
+  body.classList.remove('stop-scroll');
 })
 
 //----------------------------------------
@@ -116,6 +119,11 @@ const sizeM = document.querySelector('.size-m');
 const sizeL = document.querySelector('.size-l');
 const additives = document.querySelectorAll('.additives');
 const modalPicture = document.querySelector('.modal-drinks__pic');
+const price = document.querySelector('.modal-drinks__price');
+const buttonSize = document.querySelectorAll('.tabs__button-size');
+const buttonTabs = document.querySelectorAll('.tabs__button');
+const tabsButtonAdditive = document.querySelectorAll('.tabs__button-additive');
+const prices = [0.00, 0.50, 1.00];
 
 function getData(url) {
   fetch(url)
@@ -133,11 +141,36 @@ function getData(url) {
             additives[i].innerHTML = data[index].additives[i].name;
           }
           modalPicture.src = modalImg[index];
+          modalPicture.alt = data[index].name;
+          price.innerHTML = data[index].price;
+          
+          for (let j = 0; j < buttonTabs.length; j++) {
+            buttonTabs[j].addEventListener('click', () => {
+              if (j < 3) {
+                buttonTabs[j].classList.toggle('tabs__button_active');
+                if (buttonTabs[j].classList.contains('tabs__button_active')) {
+                  price.innerHTML = (Number(price.innerHTML) + prices[j]).toFixed(2);
+                } else {
+                  price.innerHTML = (Number(price.innerHTML) - prices[j]).toFixed(2);
+                }
+              }
+
+              if (j > 2) {
+                buttonTabs[j].classList.toggle('tabs__button_active');
+                if (buttonTabs[j].classList.contains('tabs__button_active')) {
+                  price.innerHTML = (Number(price.innerHTML) + 0.50).toFixed(2);
+                } else {
+                  price.innerHTML = (Number(price.innerHTML) - 0.50).toFixed(2);
+                }
+              }
+            })
+          }
         })
       }
     });
 }
 getData(dataUrl);
+
 
 
 
